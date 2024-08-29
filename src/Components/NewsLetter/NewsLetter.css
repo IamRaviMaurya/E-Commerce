@@ -1,55 +1,56 @@
 .news-letter {
-    width: 65%;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 0px, 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1FFea22 60%);
-    gap: 30px;
-}
-
-.news-letter h1{
-    color: #454545;
-    font-size: 55px;
+    background: linear-gradient(180deg, #fff5e1, #f9ffe122 60%);
+    color: black;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .news-letter h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
     font-weight: 600;
-}
-
-.news-letter p{
-    color: #454545;
-    font-size: 20px;
-}
-
-.news-letter div{
+  }
+  
+  .news-letter p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #242020;
+  }
+  
+  .news-letter div {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background: white;
-    width: 730px;
-    height: 70px;
-    border-radius: 80px;
-    border: 1px solid #e3e3e3;
-}
-
-.news-letter input{
-    width: 500px;
-    margin-left: 30px;
-    border: none;
+    gap: 10px;
+  }
+  
+  .news-letter input[type="email"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 1px solid #ddd;
     outline: none;
-    color: #616161;
-    font-family: Poppins;
-    font-size: 16px;
-}
-
-.news-letter div button{
-    width: 210px;
-    height: 70px;
-    border-radius: 90px;
-    background-color: black;
+    width: 300px;
+    max-width: 100%;
+  }
+  
+  .news-letter input[type="email"]::placeholder {
+    color: #aaa;
+  }
+  
+  .news-letter button {
+    background-color: #ff9800;
     color: white;
-    font-size: 16px;
+    padding: 10px 20px; /* Adjust padding to make the button more compact */
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
     cursor: pointer;
-}
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensures the button width is determined by its content */
+    width: auto; /* Makes sure the button width adjusts to its content */
+    text-align: center; /* Centers the text within the button */
+  }
+  

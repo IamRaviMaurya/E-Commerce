@@ -1,29 +1,101 @@
-.shopcategory-banner{
-    display: block;
-    margin: 30px auto;
-    width: 82%;
+/* ShopCategory.css */
+
+.shop-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.shopcategory-indexSort{
+.shop-category img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.shop-category-index-short {
     display: flex;
-    margin: 0px 170px;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.shopcategory-short{
-    padding: 10px 20px;
-    border-radius: 40px;
-    border: 1px solid #888;
+.shop-category-index-short p {
+    font-size: 1rem;
+    color: #555;
 }
 
-.shopcategory-indexSort p span{
-    font-weight: 600;
+.shop-category-index-short span {
+    font-weight: bold;
+    color: #333;
 }
 
-.shopcategory-products{
-    margin: 20px 170px;
+.shop-category-short {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+}
+
+.shop-category-short img {
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.shop-category-products {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.load-more {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #ff9800;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.load-more:hover {
+    background-color: #e68900;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .shop-category-index-short {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .shop-category-index-short p {
+        margin-bottom: 10px;
+    }
+
+    .shop-category-short {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-category-products {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 15px;
+    }
+
+    .shop-category img {
+        max-height: 200px;
+    }
 }
