@@ -4,7 +4,7 @@ import remove_icon from "../Assets/cart_cross_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
 
 const CartItem  = () => {
-  const { all_product, cartItems, removeFromCart } = useContext(ShopContext);
+  const { all_product, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext);
 
   return (
     <div className="cart-item">
@@ -51,7 +51,7 @@ const CartItem  = () => {
           <div>
             <div className="cart-item-total-item">
               <p>subtotal</p>
-              <p><i className="fa fa-inr"></i>{0}</p>
+              <p><i className="fa fa-inr"></i>{getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cart-item-total-item">
@@ -61,7 +61,7 @@ const CartItem  = () => {
             <hr />
             <div className="cart-item-total-item">
               <h3>Total</h3>
-              <h3><i className="fa fa-inr"></i>{0}</h3>
+              <h3><i className="fa fa-inr"></i>{getTotalCartAmount()}</h3>
             </div>
             <button>Proceed To Checkout</button>
           </div>
