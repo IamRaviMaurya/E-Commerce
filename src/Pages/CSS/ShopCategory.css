@@ -92,6 +92,7 @@
 @media (max-width: 480px) {
     .shop-category-products {
         grid-template-columns: repeat(2, 1fr); /* Two items per row */
+        gap: 0px;
     }
 
 }

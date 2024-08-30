@@ -46,8 +46,12 @@
   
   @media (max-width: 600px) {
     .popular-item > * {
-      flex: 1 1 100%; /* 1 item per row on small screens */
+      flex: 35%; /* 1 item per row on small screens */
       max-width: 100%; /* Full width */
+    }
+
+    .popular{
+      height: 65vh;
     }
   }
   
