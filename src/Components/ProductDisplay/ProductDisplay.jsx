@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./ProductDisplay.css";
 import start_icon from "../Assets/star_icon.png";
 import start_dull_icon from "../Assets/star_dull_icon.png";
+import { ShopContext } from "../../Context/ShopContext";
 
 const ProductDisplay = (props) => {
   const { product } = props;
+  const { addToCart } = useContext(ShopContext);
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const buttonStyle = {
+    maxWidth: "200px",
+    width: "100%",
+    padding: "10px 20px",
+    backgroundColor: isHovered ? "#e68900" : "#ff9800", // Change on hover
+    color: "white",
+    fontSize: "1rem",
+    fontWeight: 500,
+    border: "none",
+    cursor: "pointer",
+    transition: "background-color 0.3s ease",
+  };
   return (
     <div className="product-display">
       <div className="product-display-left">
@@ -35,20 +52,19 @@ const ProductDisplay = (props) => {
         </div>
         <div className="product-display-right-price">
           <div className="product-display-right-price-old">
-            <i class="fa fa-inr"></i>
+            <i className="fa fa-inr"></i>
             {product.old_price}
           </div>
           <div className="product-display-right-price-new">
-            <i class="fa fa-inr"></i>
+            <i className="fa fa-inr"></i>
             {product.new_price}
           </div>
         </div>
         <div className="product-display-right-decryption">
-          Indulge in the timeless elegance of our pink handwoven clothe.
-          Adorned with intricate zari work, this saree captures the essence of
-          Indian craftsmanship. Its rich colour scheme and luxurious drape make
-          it a true masterpiece. This clothe is perfect for weddings and
-          festivities.
+          Indulge in the timeless elegance of our pink handwoven clothe. Adorned
+          with intricate zari work, this saree captures the essence of Indian
+          craftsmanship. Its rich colour scheme and luxurious drape make it a
+          true masterpiece. This clothe is perfect for weddings and festivities.
         </div>
         <div className="product-display-right-size-chart">
           <h1>Select Size</h1>
@@ -60,9 +76,22 @@ const ProductDisplay = (props) => {
             <div>XXL</div>
           </div>
         </div>
-        <button>Add To Cart</button>
-        <p className="product-display-right-category"><span>Category :</span>Women, T- Shirt, Crop- Top</p>
-        <p className="product-display-right-category"><span>Tags :</span>Modern, Latest, Fashion</p>
+        <button
+          onClick={() => {
+            addToCart(product.id);
+          }}
+          style={buttonStyle}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          Add To Cart
+        </button>
+        <p className="product-display-right-category">
+          <span>Category :</span>Women, T- Shirt, Crop- Top
+        </p>
+        <p className="product-display-right-category">
+          <span>Tags :</span>Modern, Latest, Fashion
+        </p>
       </div>
     </div>
   );
