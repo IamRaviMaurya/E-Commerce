@@ -64,3 +64,9 @@
     margin: 0 auto 20px auto;
   }
   
+  @media (max-width: 500px) {
+    .related-products-item {
+      grid-template-columns: repeat(2, 1fr); /* Two items per row */
+      gap: 10px; /* Add some space between items */
+    }
+  }

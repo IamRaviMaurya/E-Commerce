@@ -141,15 +141,47 @@
   .product-display {
     flex-direction: column;
     align-items: center;
+    padding: 10px; /* Add padding to ensure spacing */
   }
 
   .product-display-left,
   .product-display-right {
     width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
 
   .product-display-omg-list img {
     width: 60px;
     /* Adjust size for smaller screens */
+    margin-bottom: 10px; /* Add spacing between images */
+  }
+
+  .product-display-omg-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items if there's not enough space */
+    justify-content: center; /* Center-align items */
+  }
+
+  .product-display-omg-list-item {
+    margin: 5px; /* Adjust margin to ensure items don’t crowd */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-display {
+    padding: 5px; /* Reduce padding for very small screens */
+  }
+
+  .product-display-omg-list img {
+    width: 50px; /* Further reduce size for very small screens */
+  }
+
+  .product-display-omg-list {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  .product-display-omg-list-item {
+    margin: 2px; /* Smaller margin for very small screens */
   }
 }
