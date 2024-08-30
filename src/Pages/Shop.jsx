@@ -5,8 +5,7 @@ import Offer from "../Components/Offer/Offer";
 import NewCollection from "../Components/NewCollection/NewCollection";
 import NewsLetter from "../Components/NewsLetter/NewsLetter";
 
-const Shop = (props) => {
-  if (props.category === "E-Commerce") {
+const Shop = () => {
     return (
       <div>
         <Hero />
@@ -16,7 +15,6 @@ const Shop = (props) => {
         <NewsLetter />
       </div>
     );
-  } else return null;
 };
 
 export default Shop;
