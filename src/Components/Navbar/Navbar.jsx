@@ -14,7 +14,7 @@ const Navbar = () => {
       <ul className="nav-menu">
         <li>
           <NavLink
-            to="/"
+            to="/E-Commerce"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             Shop
