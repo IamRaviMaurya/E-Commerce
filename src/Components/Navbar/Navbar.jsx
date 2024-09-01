@@ -5,6 +5,8 @@ import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
 import nav_dropdown from "../Assets/nav_dropdown.png";
+import nav_menu from "../Assets/menu.png";
+
 
 const Navbar = () => {
   const { getTotalCartItem } = useContext(ShopContext);
@@ -21,7 +23,7 @@ const Navbar = () => {
       </div>
       <img
         onClick={dropdownToggle}
-        src={nav_dropdown}
+        src={nav_menu}
         alt=""
         className="nav-dropdown"
       />
